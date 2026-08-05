@@ -18,7 +18,7 @@ const InputField = ({
           ${
             error
               ? "border-red-500"
-              : "border-blue-primary focus:border-blue-600"
+              : "border-blue-primary"
           }
           ${className}`}
       />

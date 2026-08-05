@@ -2,15 +2,33 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { loginSchema } from "../Validators/FormSchema";
-// import { loginSchema } from "../validation/loginSchema";
+import { Link } from "react-router-dom";
+import InputField from "../Components/InputField";
+
+const loginfields = [
+  {
+    name: "username",
+    placeholder: "نام کاربری",
+  },
+
+  {
+    name: "password",
+    placeholder: "رمز عبور",
+    type: "password",
+  },
+];
 
 const Login = () => {
-  const { register, handleSubmit ,formState:{errors,isSubmitSuccessful} } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm({
     defaultValues: {
       username: "",
       password: "",
     },
-    
+
     resolver: zodResolver(loginSchema),
   });
 
@@ -30,40 +48,29 @@ const Login = () => {
         className="w-full max-w-100 flex-col-center my-10 "
       >
         <div className="w-full flex-col-center">
-          <div className="flex-col-center p-3 w-full">
-            <input
-              type="text"
-              placeholder="نام کاربری"
-              className="w-full border-blue-primary border-2 rounded-2xl px-4 py-2"
-              {...register("username")}
+          <h5 className="m-5 font-bold">ورود به حساب کاربری</h5>
+
+          {loginfields.map((field) => (
+            <InputField
+              key={field.name}
+              name={field.name}
+              type={field.type}
+              placeholder={field.placeholder}
+              register={register}
+              error={errors[field.name]}
             />
-            <span className="text-red-700">
-              {errors.username && (
-                <span className="text-red-700">{errors.username.message}</span>
-              )}
-            </span>
-          </div>
-          <div className="w-full flex-col-center p-3">
-            <input
-              type="text"
-              placeholder="رمز عبور"
-              className="w-full  border-blue-primary border-2 rounded-2xl px-4 py-2"
-              {...register("password")}
-            />
-            <span className="text-red-700">
-              {errors.password && (
-                <span className="text-red-700">{errors.password.message}</span>
-              )}
-            </span>
-          </div>
+          ))}
         </div>
-        <div className="mt-10">
+        <div className=" mt-10">
           <button className="w-full max-w-76 bg-blue-primary text-white rounded-2xl px-4 py-2 my-2">
             ورود به حساب
           </button>
           <button className="w-full max-w-76 bg-black-primary text-white rounded-2xl px-4 py-2 my-2">
             ورود به عنوان مهمان
           </button>
+          <Link to={"/Signin"}>
+            <p className="w-full text-center">ساخت حساب جدید</p>
+          </Link>
         </div>
       </form>
     </div>

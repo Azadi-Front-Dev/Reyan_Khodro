@@ -6,9 +6,11 @@ import "./App.css";
 import { useRoutes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import Signin from "./Pages/Signin";
 const routes = [
   { path: "/", element: <Home /> },
-  {path:'/Login',element:<Login/>},
+  { path: "/Login", element: <Login /> },
+  { path: "/Signin", element: <Signin /> },
   // {path:'',element:<h1></h1>},
 ];
 function App() {
