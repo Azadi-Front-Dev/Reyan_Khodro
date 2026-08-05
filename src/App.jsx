@@ -5,9 +5,10 @@ import heroImg from "./assets/hero.png";
 import "./App.css";
 import { useRoutes } from "react-router-dom";
 import Home from "./Pages/Home";
+import Login from "./Pages/Login";
 const routes = [
   { path: "/", element: <Home /> },
-  // {path:'',element:<h1></h1>},
+  {path:'/Login',element:<Login/>},
   // {path:'',element:<h1></h1>},
 ];
 function App() {

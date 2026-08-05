@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/Fonts/Vazir/Vazir.woff2") format("woff2");
+  font-display: swap;
+}
+button:hover {
+  cursor: pointer;
+}
+
+
+
+@theme {
+  --font-Vazir: "Vazir";
+
+  --color-blue-primary: #3d56f0;
+  --color-blue-secoundry: #cfe9ff;
+  --color-black-primary: #312b2b;
+}
+
+@layer base {
+  body {
+    @apply font-Vazir;
+    direction: rtl;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@utility flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  @apply text-5xl font-bold;
+}
+
+h2 {
+  @apply text-4xl font-bold;
+}
+
+h3 {
+  @apply text-3xl font-semibold;
+}
+
+h4 {
+  @apply text-2xl font-semibold;
+}
+
+h5 {
+  @apply text-xl font-medium;
+}
+
+h6 {
+  @apply text-lg font-medium;
+}
