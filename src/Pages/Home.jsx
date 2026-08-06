@@ -3,6 +3,9 @@ import InputField from "../Components/InputField";
 import { useForm } from "react-hook-form";
 import { FiSearch } from "react-icons/fi";
 import { RiMenu2Fill } from "react-icons/ri";
+import { FaUser } from "react-icons/fa";
+import { BsChatDots } from "react-icons/bs";
+import { IoSettingsSharp } from "react-icons/io5";
 
 const fields = [
   {
@@ -24,13 +27,13 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="h-900 bg-blue-secoundry flex flex-col items-center ">
       <div className="bg-blue-primary w-full rounded-b-[40px] sticky -top-3 p-5">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="max-w-150 flex-col-center gap-5"
         >
-          <div className="max-h-13 text-white border-2 border-white flex-center rounded-2xl p-3">
+          <div className="h-10 max-h-13 text-white border-2 border-white flex-center rounded-2xl p-5">
             {fields.map((field) => (
               <InputField
                 key={field.name}
@@ -39,7 +42,7 @@ const Home = () => {
                 placeholder={field.placeholder}
                 register={register}
                 error={errors[field.name]}
-                className=" h-full placeholder:text-white "
+                className=" h-5 placeholder:text-white "
               />
             ))}
             <FiSearch size={40} />
@@ -47,11 +50,15 @@ const Home = () => {
         </form>
       </div>
 
-      <div className="h-300">
-        {/* <div className="flex flex-col items-start justify-end text-white">
+      <div className="flex items-center justify-between sm:justify-evenly w-full h-15 md:hidden bg-white border-t-4 border-blue-primary fixed bottom-0 rounded-t-2xl p-5">
+
           <RiMenu2Fill size={30} />
-        </div> */}
+          <FaUser size={30} />
+          <BsChatDots size={30} />
+          <IoSettingsSharp size={30} />
+          <FiSearch size={40} />
       </div>
+
     </div>
   );
 };

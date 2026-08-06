@@ -17,7 +17,7 @@ function App() {
   const router = useRoutes(routes);
   return (
     <>
-      <div className=""></div>
+      <div className="bg-blue-secoundry"></div>
       {router}
     </>
   );
