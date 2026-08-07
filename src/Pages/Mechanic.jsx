@@ -46,43 +46,15 @@ const filters = [
     options: ["همه شهر های ایران", "تهران", "اصفهان", "مشهد", "شیراز"],
   },
 ];
-const Secoundfilters = [
-  {
-    id: 1,
-    name: "category",
-    label: "جزییات خدمات",
-    options: [
-      "تعمیر موتور کامل",
-      "تعمیر سرسیلندر",
-      "تعویض واشر سرسیلندر",
-      "رفع روغن‌سوزی",
-      "تعمیر سیستم خنک‌ کننده",
-      "رفع مشکلات احتراق موتور",
-    ],
-  },
-  {
-    id: 1,
-    name: "category",
-    label: "جزییات خدمات",
-    options: [
-      "تعمیر موتور کامل",
-      "تعمیر سرسیلندر",
-      "تعویض واشر سرسیلندر",
-      "رفع روغن‌سوزی",
-      "تعمیر سیستم خنک‌ کننده",
-      "رفع مشکلات احتراق موتور",
-    ],
-  },
-];
 
-const Mechanic = () => {
+const Mechanic = ({title,}) => {
   return (
-    <div className="flex-col-center h-900 p-5">
+    <div className="flex-col-center p-5">
       <h2 className="font-bold text-xl mb-5 text-center">
-          خدمات مکانیکی و سرویس خودرو
+        خدمات مکانیکی و سرویس خودرو
       </h2>
       <div className="flex flex-col lg:flex-row w-full h-full">
-        <div className=" flex-col-center h-fit z-12 lg:sticky top-0 whitespace-nowrap md:flex-center lg:max-w-100 p-5">
+        <div className=" flex-col-center h-fit z-12 lg:sticky -top-85 whitespace-nowrap md:flex-center lg:max-w-100 p-5">
           <div className="max-w-90 w-full h-full">
             <img
               src="../Images/section_a2.png"

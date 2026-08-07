@@ -17,22 +17,24 @@ import { FaOilCan } from "react-icons/fa6";
 import { IoCarSport } from "react-icons/io5";
 import { PiEngineFill } from "react-icons/pi";
 import { GiFlatTire } from "react-icons/gi";
+import { Link } from "react-router-dom";
+import { IoFlashlight } from "react-icons/io5";
+import { MdOutlineWindPower } from "react-icons/md";
+import Search from "../Components/Search";
 import Servicebutton from "../Components/Servicebutton";
 import Header from "../Components/Header";
-import { Link } from "react-router-dom";
-import Search from "../Components/Search";
 
 const Services = [
   {
     id: 1,
     title: "خدمات فنی خودرو",
     Icon: FaCar,
-    route: "/services/mechanic",
   },
   {
     id: 2,
     title: "مکانیکی",
     Icon: FaWrench,
+    route: "/services/mechanic",
   },
   {
     id: 3,
@@ -79,6 +81,16 @@ const Services = [
     id: 12,
     title: "خدمات لاستیک و تایر ",
     Icon: GiFlatTire,
+  },
+  {
+    id: 13,
+    title: "کارشناسی رنگ خودرو ",
+    Icon: IoFlashlight,
+  },
+  {
+    id: 14,
+    title: "شارژ و سرویس کولر ",
+    Icon: MdOutlineWindPower,
   },
 ];
 
