@@ -20,6 +20,7 @@ import { PiEngineFill } from "react-icons/pi";
 import { GiFlatTire } from "react-icons/gi";
 import Servicebutton from "../Components/Servicebutton";
 import Header from "../Components/Header";
+import { Link } from "react-router-dom";
 
 const fields = [
   {
@@ -100,7 +101,21 @@ const Home = () => {
 
   return (
     <div className="h-900 bg-blue-secoundry flex flex-col items-center ">
-      <div className="bg-blue-primary w-full rounded-b-[40px] sticky -top-3 p-5">
+      <div className="flex flex-col md:flex-row items-center justify-evenly bg-blue-primary w-full md:h-20 rounded-b-[40px] sticky -top-24 md:-top-5 p-5 md:pt-9 ">
+        <div className="flex-center h-full gap-5 m-5">
+          <Link
+            to={"/login"}
+            className="border-2 bg-white rounded-2xl px-5 py-2 text-blue-primary"
+          >
+            ورود
+          </Link>
+          <Link
+            to={"/signin"}
+            className="border-2 border-white rounded-2xl px-5 py-2 text-white"
+          >
+            ثبت نام
+          </Link>
+        </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="max-w-150 flex-col-center gap-5"
@@ -121,7 +136,7 @@ const Home = () => {
           </div>
         </form>
       </div>
-      <Header/>
+      <Header />
       <div
         className="
               flex-col-center w-full
