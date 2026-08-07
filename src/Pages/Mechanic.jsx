@@ -1,5 +1,6 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
+import ServiceList from "../Components/ServiceList";
 
 const filters = [
   {
@@ -72,54 +73,59 @@ const Secoundfilters = [
       "رفع مشکلات احتراق موتور",
     ],
   },
-
 ];
 
 const Mechanic = () => {
   return (
-    <div className="h-900">
-      <div className="lg:fixed flex-col-center md:flex-center lg:max-w-100 p-5">
-        <div className="max-w-100 w-full h-full">
-          <img
-            src="../Images/section_a2.png"
-            alt=""
-            className="w-full h-full"
-          />
-        </div>
-        <div className="md:max-w-100 w-full bg-white rounded-3xl p-5 flex flex-col gap-5 ">
-          <h2 className="text-xl font-bold text-blue-primary">
-            فیلتر خدمات مکانیکی
-          </h2>
-
-          <div className=" w-full flex-center border-2 border-gray-300 rounded-2xl px-4 h-12 ">
-            <input
-              type="text"
-              placeholder="جستجو در خدمات..."
-              className=" w-full outline-none text-right "
+    <div className="flex-col-center h-900 p-5">
+      <h2 className="font-bold text-xl mb-5 text-center">
+          خدمات مکانیکی و سرویس خودرو
+      </h2>
+      <div className="flex flex-col lg:flex-row w-full h-full">
+        <div className=" flex-col-center h-fit z-12 lg:sticky top-0 whitespace-nowrap md:flex-center lg:max-w-100 p-5">
+          <div className="max-w-90 w-full h-full">
+            <img
+              src="../Images/section_a2.png"
+              alt=""
+              className="w-full h-full"
             />
-            <FiSearch size={25} />
           </div>
+          <div className="md:max-w-100 w-full bg-white rounded-3xl p-5 flex flex-col gap-5 ">
+            <h4 className=" text-xl font-bold text-blue-primary">
+              فیلتر خدمات مکانیکی
+            </h4>
 
-          <div className=" grid grid-cols-1 lg:grid-cols-1 gap-4 ">
-            {filters.map((filter) => (
-              <div key={filter.id} className="flex flex-col gap-2">
-                <label className=" text-sm font-semibold text-gray-700 ">
-                  {filter.label}
-                </label>
+            <div className=" w-full flex-center border-2 border-gray-300 rounded-2xl px-4 h-12 ">
+              <input
+                type="text"
+                placeholder="جستجو در خدمات..."
+                className=" w-full outline-none text-right "
+              />
+              <FiSearch size={25} />
+            </div>
 
-                <select className=" h-12 rounded-xl border-2 border-gray-300 outline-none cursor-pointer px-3 ">
-                  {filter.options.map((option) => (
-                    <option key={option}>{option}</option>
-                  ))}
-                </select>
-              </div>
-            ))}
+            <div className=" grid grid-cols-1 lg:grid-cols-1 gap-4 ">
+              {filters.map((filter) => (
+                <div key={filter.id} className="flex flex-col gap-2">
+                  <label className=" text-sm font-semibold text-gray-700 ">
+                    {filter.label}
+                  </label>
+
+                  <select className=" h-12 rounded-xl border-2 border-gray-300 outline-none cursor-pointer px-3 ">
+                    {filter.options.map((option) => (
+                      <option key={option}>{option}</option>
+                    ))}
+                  </select>
+                </div>
+              ))}
+            </div>
+
+            <button className=" h-12 rounded-xl bg-blue-primary text-white font-bold hover:opacity-90 transition ">
+              اعمال فیلتر
+            </button>
           </div>
-
-          <button className=" h-12 rounded-xl bg-blue-primary text-white font-bold hover:opacity-90 transition ">
-            اعمال فیلتر
-          </button>
         </div>
+        <ServiceList />
       </div>
     </div>
   );
