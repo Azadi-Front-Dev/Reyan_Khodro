@@ -36,7 +36,7 @@ const Login = () => {
     console.log(data);
   };
   return (
-    <div className="w-full h-screen flex-col-center bg-blue-secoundry p-4 ">
+    <div className="w-full h-full flex-col-center bg-blue-secoundry p-4">
       <div className="flex-center flex-col">
         <div className="max-w-100">
           <img src="./Logo/Login.png" className="w-full h-full" />

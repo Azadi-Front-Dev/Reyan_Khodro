@@ -1,6 +1,5 @@
 import React from "react";
 import InputField from "../Components/InputField";
-import { useForm } from "react-hook-form";
 import { FiSearch } from "react-icons/fi";
 import { RiMenu2Fill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
@@ -21,19 +20,14 @@ import { GiFlatTire } from "react-icons/gi";
 import Servicebutton from "../Components/Servicebutton";
 import Header from "../Components/Header";
 import { Link } from "react-router-dom";
+import Search from "../Components/Search";
 
-const fields = [
-  {
-    name: "searchbar",
-    type: "text",
-    placeholder: " جست و جو ... ",
-  },
-];
 const Services = [
   {
     id: 1,
     title: "خدمات فنی خودرو",
     Icon: FaCar,
+    route: "/services/mechanic",
   },
   {
     id: 2,
@@ -89,53 +83,9 @@ const Services = [
 ];
 
 const Home = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
   return (
     <div className="h-900 bg-blue-secoundry flex flex-col items-center ">
-      <div className="flex flex-col md:flex-row items-center justify-evenly bg-blue-primary w-full md:h-20 rounded-b-[40px] sticky -top-24 md:-top-5 p-5 md:pt-9 ">
-        <div className="flex-center h-full gap-5 m-5">
-          <Link
-            to={"/login"}
-            className="border-2 bg-white rounded-2xl px-5 py-2 text-blue-primary"
-          >
-            ورود
-          </Link>
-          <Link
-            to={"/signin"}
-            className="border-2 border-white rounded-2xl px-5 py-2 text-white"
-          >
-            ثبت نام
-          </Link>
-        </div>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="max-w-150 flex-col-center gap-5"
-        >
-          <div className="h-10 max-h-13 text-white border-2 border-white flex-center rounded-2xl p-5">
-            {fields.map((field) => (
-              <InputField
-                key={field.name}
-                name={field.name}
-                type={field.type}
-                placeholder={field.placeholder}
-                register={register}
-                error={errors[field.name]}
-                className=" h-5 placeholder:text-white "
-              />
-            ))}
-            <FiSearch size={40} />
-          </div>
-        </form>
-      </div>
+      <Search />
       <Header />
       <div
         className="
@@ -147,6 +97,7 @@ const Home = () => {
           return (
             <Servicebutton
               key={Service.id}
+              route={Service.route}
               title={Service.title}
               Icon={Service.Icon}
             />
@@ -157,7 +108,9 @@ const Home = () => {
       </div>
       <div className="flex items-center justify-between sm:justify-evenly w-full h-15 md:hidden bg-white border-t-4 border-blue-primary fixed bottom-0 rounded-t-2xl p-5">
         <RiMenu2Fill size={30} />
-        <FaUser size={30} />
+        <Link to={"/login"}>
+          <FaUser size={30} />
+        </Link>
         <BsChatDots size={30} />
         <IoSettingsSharp size={30} />
         <FiSearch size={40} />
