@@ -19,6 +19,7 @@ import { IoCarSport } from "react-icons/io5";
 import { PiEngineFill } from "react-icons/pi";
 import { GiFlatTire } from "react-icons/gi";
 import Servicebutton from "../Components/Servicebutton";
+import Header from "../Components/Header";
 
 const fields = [
   {
@@ -120,6 +121,7 @@ const Home = () => {
           </div>
         </form>
       </div>
+      <Header/>
       <div
         className="
               flex-col-center w-full
