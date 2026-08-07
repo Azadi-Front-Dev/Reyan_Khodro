@@ -6,12 +6,57 @@ import { RiMenu2Fill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { BsChatDots } from "react-icons/bs";
 import { IoSettingsSharp } from "react-icons/io5";
+import { FaCar } from "react-icons/fa";
+import { FaWrench } from "react-icons/fa6";
+import { FaCarBattery } from "react-icons/fa";
+import { GiSpray } from "react-icons/gi";
+import { GiTowTruck } from "react-icons/gi";
+import { GiWrench } from "react-icons/gi";
+import { FaScrewdriverWrench } from "react-icons/fa6";
+import Servicebutton from "../Components/Servicebutton";
 
 const fields = [
   {
     name: "searchbar",
     type: "text",
     placeholder: " جست و جو ... ",
+  },
+];
+const Services = [
+  {
+    id: 1,
+    title: "خدمات فنی خودرو",
+    Icon: FaCar,
+  },
+  {
+    id: 2,
+    title: "مکانیکی",
+    Icon: FaWrench,
+  },
+  {
+    id: 3,
+    title: "زیر و بند سازی ",
+    Icon: FaScrewdriverWrench,
+  },
+  {
+    id: 4,
+    title: " برق خودرو و باتری سازی",
+    Icon: FaCarBattery,
+  },
+  {
+    id: 5,
+    title: "نقاشی و ترمیم رنگ",
+    Icon: GiSpray,
+  },
+  {
+    id: 6,
+    title: "جرثقیل و حمل خودرو",
+    Icon: GiTowTruck,
+  },
+  {
+    id: 7,
+    title: "صافکاری بدنه" ,
+    Icon: GiWrench,
   },
 ];
 
@@ -49,16 +94,25 @@ const Home = () => {
           </div>
         </form>
       </div>
-
-      <div className="flex items-center justify-between sm:justify-evenly w-full h-15 md:hidden bg-white border-t-4 border-blue-primary fixed bottom-0 rounded-t-2xl p-5">
-
-          <RiMenu2Fill size={30} />
-          <FaUser size={30} />
-          <BsChatDots size={30} />
-          <IoSettingsSharp size={30} />
-          <FiSearch size={40} />
+      <div
+        className="
+              flex-col-center w-full
+              md:grid md:grid-cols-[repeat(2,minmax(0,360px))] md:place-items-center 
+              xl:grid-cols-[repeat(3,minmax(0,360px))]  gap-3 p-5 my-20 "
+      >
+        {Services.map((Service) => {
+          return <Servicebutton key={Service.id} title={Service.title} Icon={Service.Icon} />;
+        })}
+        {/* <div className="max-w-100 w-full h-25 bg-blue-950 rounded-2xl"></div>
+        <div className="max-w-100 w-full h-25 bg-blue-950 rounded-2xl"></div> */}
       </div>
-
+      <div className="flex items-center justify-between sm:justify-evenly w-full h-15 md:hidden bg-white border-t-4 border-blue-primary fixed bottom-0 rounded-t-2xl p-5">
+        <RiMenu2Fill size={30} />
+        <FaUser size={30} />
+        <BsChatDots size={30} />
+        <IoSettingsSharp size={30} />
+        <FiSearch size={40} />
+      </div>
     </div>
   );
 };
