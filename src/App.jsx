@@ -4,11 +4,14 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signin from "./Pages/Signin";
 import Mechanic from "./Pages/Mechanic";
+import Services from "./Pages/Services";
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/Login", element: <Login /> },
   { path: "/Signin", element: <Signin /> },
-  { path: "/services/mechanic", element: <Mechanic /> },
+  // { path: "/services/mechanic", element: <Mechanic /> },
+  { path: "/services", element: <Services /> },
+  { path: "/services/:servicename", element: <Services /> },
 
   // {path:'',element:<h1></h1>},
 ];

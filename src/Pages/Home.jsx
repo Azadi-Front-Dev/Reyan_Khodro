@@ -29,6 +29,7 @@ const Services = [
     id: 1,
     title: "خدمات فنی خودرو",
     Icon: FaCar,
+    route: "/services/technical-services",
   },
   {
     id: 2,
@@ -40,57 +41,73 @@ const Services = [
     id: 3,
     title: "زیر و بند سازی ",
     Icon: FaScrewdriverWrench,
+    route: "/services/suspension",
   },
   {
     id: 4,
     title: " برق خودرو و باتری سازی",
     Icon: FaCarBattery,
+    route: "/services/auto-electric",
   },
   {
     id: 5,
     title: "سرویس و تعویض روغن",
     Icon: FaOilCan,
+    route: "/services/oil-service",
   },
-  { id: 6, title: "تنظیم موتور و دیاگ", Icon: PiEngineFill },
+  {
+    id: 6,
+    title: "تنظیم موتور و دیاگ",
+    Icon: PiEngineFill,
+    route: "/services/diagnostic",
+  },
   {
     id: 7,
     title: "صافکاری بدنه",
     Icon: GiWrench,
+    route: "/services/body-repair",
   },
   {
     id: 8,
     title: "جرثقیل و حمل خودرو",
     Icon: GiTowTruck,
+    route: "/services/car-transport",
   },
   {
     id: 9,
     title: "کارواش و صفرشویی",
     Icon: RiCarWashingFill,
+    route: "/services/car-wash",
   },
   {
     id: 10,
     title: "نقاشی و ترمیم رنگ",
     Icon: GiSpray,
+    route: "/services/car-paint",
   },
   {
     id: 11,
     title: "اسپرت و تیونینگ خودرو",
     Icon: IoCarSport,
+    route: "/services/car-tuning",
   },
   {
     id: 12,
     title: "خدمات لاستیک و تایر ",
     Icon: GiFlatTire,
+    route: "/services/tire-service",
   },
   {
     id: 13,
     title: "کارشناسی رنگ خودرو ",
     Icon: IoFlashlight,
+    route: "/services/car-inspection",
   },
   {
     id: 14,
     title: "شارژ و سرویس کولر ",
     Icon: MdOutlineWindPower,
+    route: "/services/car-ac",
   },
 ];
 
