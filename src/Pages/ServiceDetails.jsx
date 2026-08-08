@@ -51,7 +51,9 @@ const ServiceDetails = ({ data }) => {
   // console.log(data);
   return (
     <div className="flex-col-center p-5">
-      <h2 className="font-bold text-xl mb-5 text-center">{data.title}</h2>
+      <h2 className="font-bold text-xl mb-5 text-center p-5  leading-12">
+        {data.title}
+      </h2>
       <div className="flex flex-col lg:flex-row w-full h-full">
         <div className=" flex-col-center h-fit z-12 lg:sticky -top-85 whitespace-nowrap md:flex-center lg:max-w-100 p-5">
           <div className="max-w-90 w-full h-full">
@@ -62,7 +64,7 @@ const ServiceDetails = ({ data }) => {
             />
           </div>
           <div className="md:max-w-100 w-full bg-white rounded-3xl p-5 flex flex-col gap-5 ">
-            <h4 className=" text-xl font-bold text-blue-primary">
+            <h4 className="text-xl font-bold text-blue-primary  whitespace-normal">
               {data.filtertitle}
             </h4>
 
@@ -91,13 +93,16 @@ const ServiceDetails = ({ data }) => {
               ))}
             </div>
 
-            <button className=" h-12 rounded-xl bg-blue-primary text-white font-bold hover:opacity-90 transition ">
+            <button className="rounded-xl bg-blue-primary text-white font-bold hover:opacity-90 transition p-4 ">
               اعمال فیلتر
             </button>
           </div>
         </div>
         <ServiceList data={data} />
       </div>
+      {/* <button className=" rounded-xl text-blue-primary border-blue-primary border-2 font-bold transition p-4 ">
+       مشاهده
+      </button> */}
     </div>
   );
 };
