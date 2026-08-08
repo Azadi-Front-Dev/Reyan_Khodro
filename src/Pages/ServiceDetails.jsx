@@ -50,12 +50,12 @@ const filters = [
 const ServiceDetails = ({ data }) => {
   // console.log(data);
   return (
-    <div className="h-1000 flex-col-center p-5">
-      <h2 className="font-bold text-xl mb-5 text-center p-5  leading-12">
+    <div className="h-1000 flex-col-cente py-10">
+      <h2 className="font-bold text-xl mb-5 text-center leading-12">
         {data.title}
       </h2>
       <div className="flex flex-col lg:flex-row w-full h-full">
-        <div className=" flex-col-center h-fit z-12 lg:sticky -top-85 whitespace-nowrap min-w-75 md:flex-center lg:max-w-100 p-5">
+        <div className=" flex-col-center h-fit z-12 lg:sticky -top-85 whitespace-nowrap min-w-75 md:flex-center lg:max-w-100 py-5">
           <div className="max-w-90 w-full h-full">
             <img
               src={data.image}

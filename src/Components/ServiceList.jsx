@@ -6,7 +6,7 @@ const ServiceList = ({ data }) => {
   const [selectedService, setSelectedService] = useState(null);
 
   return (
-    <div className="w-full flex-col">
+    <div className="w-full flex-col p-4">
       <div className=" w-full flex-col h-fit flex sm:flex-row gap-5 bg-white rounded-3xl max-w-5xl p-4">
         <div className="border-l pl-5">
           {data.categories.map((item) => (
