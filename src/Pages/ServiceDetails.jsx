@@ -47,22 +47,23 @@ const filters = [
   },
 ];
 
-const Mechanic = ({ title, filterImage, filtertitle }) => {
+const ServiceDetails = ({ data }) => {
+  // console.log(data);
   return (
     <div className="flex-col-center p-5">
-      <h2 className="font-bold text-xl mb-5 text-center">{title}</h2>
+      <h2 className="font-bold text-xl mb-5 text-center">{data.title}</h2>
       <div className="flex flex-col lg:flex-row w-full h-full">
         <div className=" flex-col-center h-fit z-12 lg:sticky -top-85 whitespace-nowrap md:flex-center lg:max-w-100 p-5">
           <div className="max-w-90 w-full h-full">
             <img
-              src={filterImage}
-              alt="Mechanic"
+              src={data.image}
+              alt="Sevice-image"
               className="w-full h-full rounded-[50px]"
             />
           </div>
           <div className="md:max-w-100 w-full bg-white rounded-3xl p-5 flex flex-col gap-5 ">
             <h4 className=" text-xl font-bold text-blue-primary">
-              {filtertitle}
+              {data.filtertitle}
             </h4>
 
             <div className=" w-full flex-center border-2 border-gray-300 rounded-2xl px-4 h-12 ">
@@ -95,10 +96,10 @@ const Mechanic = ({ title, filterImage, filtertitle }) => {
             </button>
           </div>
         </div>
-        <ServiceList />
+        <ServiceList data={data} />
       </div>
     </div>
   );
 };
 
-export default Mechanic;
+export default ServiceDetails;

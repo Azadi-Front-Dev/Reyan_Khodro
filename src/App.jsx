@@ -3,7 +3,7 @@ import { useRoutes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signin from "./Pages/Signin";
-import Mechanic from "./Pages/Mechanic";
+import Mechanic from "./Pages/ServiceDetails";
 import Services from "./Pages/Services";
 const routes = [
   { path: "/", element: <Home /> },

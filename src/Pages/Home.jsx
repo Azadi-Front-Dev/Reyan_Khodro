@@ -25,24 +25,24 @@ import Servicebutton from "../Components/Servicebutton";
 import Header from "../Components/Header";
 
 const Services = [
-  {
-    id: 1,
-    title: "خدمات فنی خودرو",
-    Icon: FaCar,
-    route: "/services/technical-services",
-  },
+  // {
+  //   id: 1,
+  //   title: "خدمات فنی خودرو",
+  //   Icon: FaCar,
+  //   route: "/services/technical-services",
+  // },
   {
     id: 2,
     title: "مکانیکی",
     Icon: FaWrench,
     route: "/services/mechanic",
   },
-  {
-    id: 3,
-    title: "زیر و بند سازی ",
-    Icon: FaScrewdriverWrench,
-    route: "/services/suspension",
-  },
+  // {
+  //   id: 3,
+  //   title: "زیر و بند سازی ",
+  //   Icon: FaScrewdriverWrench,
+  //   route: "/services/suspension",
+  // },
   {
     id: 4,
     title: " برق خودرو و باتری سازی",
