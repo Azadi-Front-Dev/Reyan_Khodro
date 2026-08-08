@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import Signin from "./Pages/Signin";
 import Mechanic from "./Pages/ServiceDetails";
 import Services from "./Pages/Services";
+import NotFound from "./Pages/NotFound";
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/Login", element: <Login /> },
@@ -12,6 +13,7 @@ const routes = [
   // { path: "/services/mechanic", element: <Mechanic /> },
   { path: "/services", element: <Services /> },
   { path: "/services/:servicename", element: <Services /> },
+  { path: "*", element: <NotFound /> },
 
   // {path:'',element:<h1></h1>},
 ];
