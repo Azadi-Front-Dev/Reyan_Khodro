@@ -1,17 +1,14 @@
 import React from "react";
-import InputField from "../Components/InputField";
 import { FiSearch } from "react-icons/fi";
 import { RiMenu2Fill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { BsChatDots } from "react-icons/bs";
 import { IoSettingsSharp } from "react-icons/io5";
-import { FaCar } from "react-icons/fa";
 import { FaWrench } from "react-icons/fa6";
 import { FaCarBattery } from "react-icons/fa";
 import { GiSpray } from "react-icons/gi";
 import { GiTowTruck } from "react-icons/gi";
 import { GiWrench } from "react-icons/gi";
-import { FaScrewdriverWrench } from "react-icons/fa6";
 import { RiCarWashingFill } from "react-icons/ri";
 import { FaOilCan } from "react-icons/fa6";
 import { IoCarSport } from "react-icons/io5";
@@ -111,9 +108,39 @@ const Services = [
   },
 ];
 
+const serviceHighlights  = [
+  {
+    id: 1,
+    title: "حمل  خودرو با نازل ترین قیمت",
+    description:
+      "ارائه خدمات حمل و جابه‌جایی خودرو با خودروبر و جرثقیل در مواقع خرابی، تصادف یا نیاز به انتقال خودرو.",
+    image: "/Images/Services/car-transport.png",
+  },
+  {
+    id: 2,
+    title: "   تعمیر خودرو در سریع ترین زمان  ",
+    description: "تعمیر موتور و گیریبکس و زیر و بند سازی توسط کارشناسان مجرب",
+    image: "/Images/Services/not-found-service-page.png",
+  },
+  {
+    id: 3,
+    title: "کارشناسی و تشخیص رنگ خودرو",
+    description:
+      "بررسی تخصصی بدنه و تشخیص رنگ‌شدگی، تعویض قطعات و آسیب‌های احتمالی خودرو پیش از خرید یا فروش",
+    image: "/Images/Services/color-test.png",
+  },
+  {
+    id: 4,
+    title: "خدمات کارواش و صفرشویی خودرو",
+    description:
+      "شست‌وشوی کامل خودرو، صفرشویی داخل کابین و نظافت تخصصی بخش‌های داخلی و خارجی خودرو",
+    image: "/Images/Services/carwash-bg.png",
+  },
+];
+
 const Home = () => {
   return (
-    <div className="h-900 bg-blue-secoundry flex flex-col items-center ">
+    <div className=" bg-blue-secoundry flex flex-col items-center mb-12">
       <Search />
       <Header />
       <div
@@ -135,7 +162,7 @@ const Home = () => {
         {/* <div className="max-w-100 w-full h-25 bg-blue-950 rounded-2xl"></div>
         <div className="max-w-100 w-full h-25 bg-blue-950 rounded-2xl"></div> */}
       </div>
-      <div className="flex items-center justify-between sm:justify-evenly w-full h-15 md:hidden bg-white border-t-4 border-blue-primary fixed bottom-0 rounded-t-2xl p-5">
+      <div className="flex items-center justify-between sm:justify-evenly  w-full h-15 md:hidden bg-white border-t-4 border-blue-primary fixed bottom-0 rounded-t-2xl p-5">
         <RiMenu2Fill size={30} />
         <Link to={"/login"}>
           <FaUser size={30} />
@@ -143,6 +170,24 @@ const Home = () => {
         <BsChatDots size={30} />
         <IoSettingsSharp size={30} />
         <FiSearch size={40} />
+      </div>
+      <div className=" grid grid-cols-1 md:grid-cols-2 p-4 gap-3 max-w-100 md:max-w-300">
+        {serviceHighlights .map((item) => {
+          return (
+            <div
+              key={item.id}
+              className="flex-col-center  w-full lg:h-82 border-2 bg-white border-blue-primary rounded-2xl p-5 "
+            >
+              <h4 className="p-4">{item.title}</h4>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="max-w-75 max-h-50 w-full h-full object-contain"
+              />
+              <p className="p-4">{item.description}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
