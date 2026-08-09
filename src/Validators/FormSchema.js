@@ -15,6 +15,15 @@ export const loginSchema = z.object({
     .min(1, "وارد کردن رمز عبور الزامی است!")
     .min(8, "رمز عبور باید حداقل ۸ کاراکتر باشد")
     .max(32, "رمز عبور نمیتواند بیشتر از ۳۲ کاراکتر باشد"),
+    role: z.enum([
+  "مشتری",
+  "تعمیرکار",
+  "کارشناس خودرو",
+  "راننده خودروبر",
+  "مدیر",
+], {
+  error: "نقش خود را انتخاب کنید",
+}),
 });
 
 export const signupSchema = z
@@ -30,6 +39,12 @@ export const signupSchema = z
     password: z.string().min(8, "رمز عبور باید حداقل ۸ کاراکتر باشد"),
 
     repeatpassword: z.string(),
+    role: z.enum(
+      [  "مشتری", "تعمیرکار", "کارشناس خودرو", "راننده خودروبر", "مدیر"],
+      {
+        error: "نقش خود را انتخاب کنید",
+      },
+    ),
   })
   .refine((data) => data.password === data.repeatpassword, {
     path: ["repeatpassword"],

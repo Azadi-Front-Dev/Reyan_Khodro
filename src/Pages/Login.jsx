@@ -17,6 +17,14 @@ const loginfields = [
     type: "password",
   },
 ];
+const filters = [
+  {
+    id: 1,
+    name: "role",
+    label: "نقش کاربر ",
+    options: ["مشتری", "تعمیرکار", "کارشناس خودرو", "راننده خودروبر", "مدیر"],
+  },
+];
 
 const Login = () => {
   const {
@@ -27,6 +35,7 @@ const Login = () => {
     defaultValues: {
       username: "",
       password: "",
+      role: "",
     },
 
     resolver: zodResolver(loginSchema),
@@ -60,6 +69,32 @@ const Login = () => {
               error={errors[field.name]}
             />
           ))}
+          <div className="w-[93%] grid grid-cols-1 gap-4 pt-3 ">
+            {filters.map((filter) => (
+              <div key={filter.id} className="flex flex-col gap-2">
+                <select
+                  {...register("role")}
+                  className={`w-full border-2 rounded-2xl px-4 py-2 outline-none transition-all duration-300 ${
+                    errors.role ? "border-red-500" : "border-blue-primary"
+                  }`}
+                >
+                  <option value="">نقش کاربر را انتخاب کنید</option>
+
+                  {filter.options.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+
+                {errors.role && (
+                  <span className="text-sm text-red-600">
+                    {errors.role.message}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
         <div className=" mt-10">
           <button className="w-full max-w-76 bg-blue-primary text-white rounded-2xl px-4 py-2 my-2">

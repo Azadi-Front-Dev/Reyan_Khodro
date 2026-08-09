@@ -49,7 +49,7 @@ const Search = () => {
               placeholder={field.placeholder}
               register={register}
               error={errors[field.name]}
-              className=" h-5 placeholder:text-white "
+              className=" h-5 placeholder:text-white border-0"
             />
           ))}
           <FiSearch size={40} />
