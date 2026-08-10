@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ServiceMap from "./ServiceMap";
+import ServiceMap from "./Map/ServiceMap";
 
 const ServiceList = ({ data }) => {
   const [active, setActive] = useState(null);
