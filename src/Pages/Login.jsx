@@ -79,7 +79,6 @@ const Login = () => {
                   }`}
                 >
                   <option value="">نقش کاربر را انتخاب کنید</option>
-
                   {filter.options.map((option) => (
                     <option key={option} value={option}>
                       {option}

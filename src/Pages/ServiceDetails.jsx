@@ -51,12 +51,12 @@ const ServiceDetails = ({ data }) => {
   // console.log(data);
   return (
     <div className="h-1000 flex-col-cente py-10">
-      <h2 className="font-bold text-xl mb-5 text-center leading-12">
+      <h2 className="font-bold text-xl mb-5 text-center leading-12 p-4">
         {data.title}
       </h2>
       <div className="flex flex-col lg:flex-row w-full h-full">
         <div className=" flex-col-center h-fit z-12 lg:sticky -top-85 whitespace-nowrap min-w-75 md:flex-center lg:max-w-100 py-5">
-          <div className="max-w-90 w-full h-full">
+          <div className="max-w-90 w-full h-full p-4">
             <img
               src={data.image}
               alt="Sevice-image"

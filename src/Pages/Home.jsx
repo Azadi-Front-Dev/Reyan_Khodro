@@ -144,10 +144,8 @@ const Home = () => {
       <Search />
       <Header />
       <div
-        className="
-              flex-col-center w-full
-              md:grid md:grid-cols-[repeat(2,minmax(0,360px))] md:place-items-center 
-              xl:grid-cols-[repeat(3,minmax(0,360px))]  gap-3 p-5 my-20 "
+        className="items-center justify-center grid grid-cols-2 place-items-center
+              xl:grid-cols-3  gap-3 p-5 my-20 "
       >
         {Services.map((Service) => {
           return (
