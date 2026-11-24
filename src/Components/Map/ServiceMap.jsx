@@ -47,8 +47,6 @@ const locations = [
     lat: 32.6235,
     lng: 51.6387,
   },
-
-  // برای تست تهران
   {
     id: 5,
     title: "مکانیکی تهران",
@@ -87,18 +85,14 @@ const MapController = ({ city }) => {
 
 const markerIcon = new L.Icon({
   iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-
+  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
 });
 
-const ServiceMap = ({ filters = {}, onLocationSelect }) => {
+const ServiceMap = ({ filters = {}, onLocationSelect = () => {} }) => {
   const filteredLocations = locations.filter((location) => {
     return (
       (!filters.city || location.city === filters.city) &&
@@ -110,44 +104,21 @@ const ServiceMap = ({ filters = {}, onLocationSelect }) => {
 
   return (
     <div className="w-full h-125 overflow-hidden rounded-2xl">
-      <MapContainer
-        center={[32.6264, 51.6431]}
-        zoom={14}
-        className="w-full h-full"
-      >
-        {/* تغییر موقعیت نقشه بر اساس شهر */}
+      <MapContainer center={[32.6264, 51.6431]} zoom={14} className="w-full h-full">
         <MapController city={filters.city} />
 
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap contributors"
-        />
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; OpenStreetMap contributors" />
 
-{filteredLocations.map((location) => (
-  <Marker
-    key={location.id}
-    position={[location.lat, location.lng]}
-    icon={markerIcon}
-    eventHandlers={{
-      click: () => onLocationSelect(location),
-    }}
-  >
-    <Popup>
-      <div
-        className="w-60 p-2 text-right"
-        dir="rtl"
-      >
-        <h3 className="mb-2 text-base font-bold text-gray-800">
-          {location.title}
-        </h3>
-
-        <p className="mb-4 text-xs leading-6 text-gray-500">
-          {location.description}
-        </p>
-      </div>
-    </Popup>
-  </Marker>
-))}
+        {filteredLocations.map((location) => (
+         <Marker key={location.id} position={[location.lat, location.lng]} icon={markerIcon} eventHandlers={{ click: () => onLocationSelect(location) }}>
+            <Popup>
+              <div className="w-60 p-2 text-right" dir="rtl">
+                <h3 className="mb-2 text-base font-bold text-gray-800">{location.title}</h3>
+                <p className="mb-4 text-xs leading-6 text-gray-500">{location.description}</p>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
     </div>
   );
